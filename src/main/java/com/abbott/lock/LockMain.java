@@ -1,5 +1,7 @@
 package com.abbott.lock;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * Created by jinyb on 2017/9/4.
  *
@@ -24,7 +26,9 @@ public class LockMain {
 
 //        testNotify();
 //        orderOutPut();
-        orderThreeOutPut();
+//        orderThreeOutPut();
+//        orderThreeOutPut2();
+        orderThreeOutPut3();
     }
 
 
@@ -51,9 +55,7 @@ public class LockMain {
     public static void orderOutPut()  {
         Object lock = new Object();
         new Thread(new OutputThread(1,lock)).start();
-
         new Thread(new OutputThread(2,lock)).start();
-        new Thread(new OutputThread(3,lock)).start();
 
     }
 
@@ -77,5 +79,25 @@ public class LockMain {
             e.printStackTrace();
         }
         new Thread(new OrderOutputThread(3,b,c)).start();
+    }
+
+
+    public static void orderThreeOutPut2(){
+        AtomicInteger synObj = new AtomicInteger(1);
+        new Thread(new OrderOutputThread2(1,1,synObj)).start();
+
+        new Thread(new OrderOutputThread2(2,2,synObj)).start();
+
+        new Thread(new OrderOutputThread2(3,0,synObj)).start();
+    }
+
+
+    public static void orderThreeOutPut3(){
+        Integer integer = new Integer(1);
+        new Thread(new OrderOutputThread3(1,1,integer)).start();
+
+        new Thread(new OrderOutputThread3(2,2,integer)).start();
+
+        new Thread(new OrderOutputThread3(3,0,integer)).start();
     }
 }
