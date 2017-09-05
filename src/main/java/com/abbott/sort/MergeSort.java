@@ -12,7 +12,7 @@ public class MergeSort extends Sort {
     @Timer
     public void mergeSort() {
 
-        sort(arr, 0, arr.length);
+        sort(arr, 0, arr.length-1);
         print();
     }
 
@@ -46,6 +46,8 @@ public class MergeSort extends Sort {
             } else {
                 f++;
             }
+
+            print();
         }
 
 
@@ -67,5 +69,6 @@ public class MergeSort extends Sort {
 
 
         System.out.println("fn(5)--" + new MergeSort().fn(5));
+        System.out.println("arr length--" + new MergeSort().arr.length);
     }
 }
