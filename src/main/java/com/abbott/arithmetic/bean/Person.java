@@ -1,5 +1,10 @@
 package com.abbott.arithmetic.bean;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Person {
     private String name;
     private int age;
@@ -31,5 +36,30 @@ public class Person {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Person person = (Person) o;
+
+        return age == person.age;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return age;
+    }
+
+    public static void main(String[] args) {
+        Map<Person,Integer> persons = new HashMap<>();
+        Person person = new Person("jinyb",1);
+
+        persons.put(person,2);
+        person.setAge(2);
+        System.out.println(persons.get(person));
     }
 }

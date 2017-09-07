@@ -14,7 +14,7 @@ public class Sort {
      * @param left
      * @param right
      */
-    protected void swapLeft2Right(int[] arr,int left, int right) {
+    protected void swap(int[] arr, int left, int right) {
         int temp = arr[right];
         arr[right] = arr[left];
         arr[left] = temp;

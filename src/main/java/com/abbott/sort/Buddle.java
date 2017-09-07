@@ -20,7 +20,7 @@ public class Buddle extends Sort {
 
             for (int j = 1; j < arr.length - i; j++) {
                 if (arr[j - 1] > arr[j]) {
-                    swapLeft2Right(arr, j - 1, j);
+                    swap(arr, j - 1, j);
                 }
             }
 
@@ -39,7 +39,7 @@ public class Buddle extends Sort {
                 Change = false;
                 if (arr[j - 1] > arr[j]) {
                     Change = true;
-                    swapLeft2Right(arr, j - 1, j);
+                    swap(arr, j - 1, j);
                 }
             }
 
@@ -62,7 +62,7 @@ public class Buddle extends Sort {
                 if (arr[i - 1] > arr[i]) {
                     //缩小循环的范围
                     flag = i;
-                    swapLeft2Right(arr, i - 1, i);
+                    swap(arr, i - 1, i);
                 }
 
 

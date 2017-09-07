@@ -24,7 +24,7 @@ public class ShellSort extends Sort {
                 for (int j = i; j - gap >= 0; j = j - gap) {
 
                     if (arr[j - gap] > arr[j]) {
-                        swapLeft2Right(arr, j - gap, j);
+                        swap(arr, j - gap, j);
                     }else{
                         //这是因为前面已经是有序的了。
                         break;

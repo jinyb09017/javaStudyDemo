@@ -35,18 +35,24 @@ public class QuickSort extends Sort {
 
         for (int i = left; i < right; i++) {
             if (pivot >= arr[i]) {
-                swapLeft2Right(arr, storeIndex, i);
+                swap(arr, storeIndex, i);
                 storeIndex++;
             }
 
 
         }
         //遍历完后，替换right的数据
-        swapLeft2Right(arr, right, storeIndex);
+        swap(arr, storeIndex, right);
 
         return storeIndex;
     }
 
+    /**
+     * 分治法
+     * @param arr
+     * @param left
+     * @param right
+     */
     void sort(int[] arr, int left, int right) {
         if (left > right) {
             return;

@@ -16,7 +16,7 @@ public class HeapSort extends Sort {
     public void heapSort() {
         buildMaxHeap();
         for (int index = arr.length - 1; index >= 0; index--) {
-            swapLeft2Right(arr, 0, index);
+            swap(arr, 0, index);
             maxHeapify(arr, 0, index);
         }
         print();
@@ -28,7 +28,7 @@ public class HeapSort extends Sort {
         for (int index = arr.length ; index >= 1; index--) {
 
             buildMaxHeap2(0, index);
-            swapLeft2Right(arr, 0, index-1);
+            swap(arr, 0, index-1);
 
         }
         print();
@@ -55,7 +55,7 @@ public class HeapSort extends Sort {
         }
 
         if (iMax != i) {
-            swapLeft2Right(arr, iMax, i);
+            swap(arr, iMax, i);
             //向下递归，实现最大堆
             maxHeapify(arr, iMax, size);
         }
@@ -88,7 +88,7 @@ public class HeapSort extends Sort {
             buildMaxHeap2(left, size);
 
             if (arr[left] > arr[index]) {
-                swapLeft2Right(arr, left, index);
+                swap(arr, left, index);
             }
 
 
@@ -106,7 +106,7 @@ public class HeapSort extends Sort {
             }
 
             if (iMax != index) {
-                swapLeft2Right(arr, iMax, index);
+                swap(arr, iMax, index);
             }
         }
 

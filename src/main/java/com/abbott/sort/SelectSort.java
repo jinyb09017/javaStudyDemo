@@ -21,7 +21,7 @@ public class SelectSort extends Sort {
                     m = j;
                 }
             }
-            swapLeft2Right(arr,i,m);
+            swap(arr,i,m);
 
 
         }
