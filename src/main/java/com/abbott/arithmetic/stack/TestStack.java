@@ -11,7 +11,7 @@ public class TestStack {
     }
 
     public static void testArrayStack(){
-        StackArray<Person> stackArray = new StackArray<>();
+        StackArray<Person> stackArray = new StackArray<Person>();
         stackArray.push(new Person("jinyb1",2));
         stackArray.push(new Person("jinyb2",2));
         stackArray.push(new Person("jinyb3",2));
@@ -24,7 +24,7 @@ public class TestStack {
     }
 
     public static void testLinkedStack(){
-        StackLinkedEnd<Person> stackLinked = new StackLinkedEnd<>();
+        StackLinkedEnd<Person> stackLinked = new StackLinkedEnd<Person>();
         stackLinked.push(new Person("wpd1",1));
         stackLinked.push(new Person("wpd2",1));
         stackLinked.push(new Person("wpd3",1));
@@ -39,7 +39,7 @@ public class TestStack {
 
 
     public static void testLinkedStackTop(){
-        StackLinkedTop<Person> stackLinked = new StackLinkedTop<>();
+        StackLinkedTop<Person> stackLinked = new StackLinkedTop<Person>();
         stackLinked.push(new Person("wpd1",1));
         stackLinked.push(new Person("wpd2",1));
         stackLinked.push(new Person("wpd3",1));

@@ -5,6 +5,11 @@ import com.abbott.utils.TimerUtil;
 
 /**
  * Created by jinyb on 2017/9/5.
+ * http://bubkoo.com/2014/01/15/sort-algorithm/merge-sort/
+ *
+ * 归并操作(Merge)，也叫归并算法，指的是将两个已经排序的序列合并成一个序列的操作。
+ * 归并排序算法依赖归并操作。归并排序有多路归并排序、两路归并排序 , 可用于内排序，
+ * 也可以用于外排序。这里仅对内排序的两路归并方法进行讨论。
  */
 public class MergeSort extends Sort {
 
