@@ -23,7 +23,8 @@ public class TimerUtil {
             Method[] methods = c.getDeclaredMethods();
             for (Method method : methods) {
 
-                System.out.println("method :" + method.getName());
+
+
 
 //                Annotation[] annotations = method.getAnnotations();
 //                for (Annotation annotation : annotations) {
@@ -32,6 +33,8 @@ public class TimerUtil {
 //                }
                 //方法是否包含此注解
                 if (method.isAnnotationPresent(Timer.class)) {
+                    System.out.println("--------------start--------------");
+                    System.out.println("method :" + method.getName());
                     method.setAccessible(true);
                     long start = System.nanoTime();
                     method.invoke(object);
@@ -39,7 +42,10 @@ public class TimerUtil {
 
                     long total = end - start;
                     System.out.println(method.getName() + "耗时：" + total);
+                    System.out.println("--------------end--------------");
                 }
+
+
 
             }
 

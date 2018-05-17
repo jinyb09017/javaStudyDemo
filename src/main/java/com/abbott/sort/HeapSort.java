@@ -8,12 +8,23 @@ import com.abbott.utils.TimerUtil;
  * <p>
  * 将一个记录插入到已经排好序的有序表中, 从而得到一个新的,记录数增1的有序表
  * 时间复杂度也为O(n^2), 比冒泡法和选择排序的性能要更好一些
+ *
+ * http://bubkoo.com/2014/01/14/sort-algorithm/heap-sort/
+ *
+ *
+ * 堆（二叉堆）可以视为一棵完全的二叉树，完全二叉树的一个“优秀”的性质是，除了最底层之外，
+ * 每一层都是满的，这使得堆可以利用数组来表示（普通的一般的二叉树通常用链表作为基本容器表示），
+ * 每一个结点对应数组中的一个元素。
+ *
+ *
+ *
  */
 public class HeapSort extends Sort {
 
 
     @Timer
     public void heapSort() {
+
         buildMaxHeap();
         for (int index = arr.length - 1; index >= 0; index--) {
             swap(arr, 0, index);

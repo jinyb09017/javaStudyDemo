@@ -14,4 +14,13 @@ public class Person {
         this.nickname = nickname;
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", path='" + path + '\'' +
+                '}';
+    }
 }

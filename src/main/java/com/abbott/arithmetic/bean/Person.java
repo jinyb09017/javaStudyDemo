@@ -38,21 +38,7 @@ public class Person {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
 
-        Person person = (Person) o;
-
-        return age == person.age;
-
-    }
-
-    @Override
-    public int hashCode() {
-        return age;
-    }
 
     public static void main(String[] args) {
         Map<Person,Integer> persons = new HashMap<>();

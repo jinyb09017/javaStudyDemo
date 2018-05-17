@@ -1,5 +1,7 @@
 package com.abbott.proxy;
 
+import com.abbott.annotation.GET;
+import com.abbott.annotation.Query;
 import com.abbott.proxy.auto.ProxyHandler;
 import com.abbott.proxy.common.MyProxy;
 import com.abbott.proxy.common.RealSubject;
@@ -57,12 +59,18 @@ public class Client {
 
                 //这里是一个参数对应一个注释的数组。因为一个参数可以接收多个注解器
                 System.out.println("parameterAnnotationsArray length：" + parameterAnnotationsArray.length);
-                for (Annotation[] annotations1 : parameterAnnotationsArray) {
 
+                int i =0;
+                for (Annotation[] annotations1 : parameterAnnotationsArray) {
+                    System.out.println("param = "+method.getParameters()[i]);
                     System.out.println("annotations length：" + annotations1.length);
                     for (Annotation annotation : annotations1) {
                         System.out.println(annotation);
+                        if(annotation.annotationType() == Query.class){
+                            System.out.println("good test");
+                        }
                     }
+                    i++;
                 }
                 return pageCount + pageIndex;
             }

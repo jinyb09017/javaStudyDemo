@@ -101,7 +101,7 @@ public class LinkedList {
                 temNode = temNode.getNext();
             }
 
-            if(temNode.getNext() == null){
+            if(temNode.getNext() == null){ 
                 temNode.setNext(null);
             }else {
                 temNode.setNext(temNode.getNext().getNext());

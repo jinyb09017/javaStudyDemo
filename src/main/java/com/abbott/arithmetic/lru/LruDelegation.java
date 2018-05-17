@@ -1,5 +1,7 @@
 package com.abbott.arithmetic.lru;
 
+import com.abbott.arithmetic.bean.Person;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -59,5 +61,21 @@ public class LruDelegation<K, V> {
             sb.append(String.format("%s:%s ", entry.getKey(), entry.getValue()));
         }
         return sb.toString();
+    }
+
+
+    public static void main(String[] args) {
+        LruDelegation<Person,Integer> lruDelegation = new LruDelegation<Person, Integer>(5);
+        Person p = new Person("name",3);
+        lruDelegation.put(new Person("name",1),1);
+        lruDelegation.put(new Person("name",2),1);
+        lruDelegation.put(p,1);
+        lruDelegation.put(new Person("name",4),1);
+        lruDelegation.put(new Person("name",5),1);
+        lruDelegation.put(new Person("name",6),1);
+
+
+        lruDelegation.get(p);
+        System.out.println(lruDelegation.toString());
     }
 }
